@@ -301,16 +301,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8923958224139028934, guid: 2e4b5bf29136b594a87c5385868c4c30,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 50c9fad84267da94dbf7b932e47f7fd0, type: 2}
     - target: {fileID: 6557684612768523983, guid: 2e4b5bf29136b594a87c5385868c4c30,
         type: 3}
       propertyPath: m_Name
       value: Table
       objectReference: {fileID: 0}
+    - target: {fileID: 8923958224139028934, guid: 2e4b5bf29136b594a87c5385868c4c30,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 50c9fad84267da94dbf7b932e47f7fd0, type: 2}
     - target: {fileID: 4791900998735370015, guid: 2e4b5bf29136b594a87c5385868c4c30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -374,6 +374,16 @@ PrefabInstance:
     - target: {fileID: 618910694992383608, guid: 2e4b5bf29136b594a87c5385868c4c30,
         type: 3}
       propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5570481958631074231, guid: 2e4b5bf29136b594a87c5385868c4c30,
+        type: 3}
+      propertyPath: Speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7619686361596304604, guid: 2e4b5bf29136b594a87c5385868c4c30,
+        type: 3}
+      propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "ai.transforms.gilgamesh.unity": "https://github.com/transitional-forms-inc/Gilgamesh.git#UnityPackage",
     "com.unity.collab-proxy": "1.2.16",
     "com.unity.ext.nunit": "1.0.0",
     "com.unity.ide.rider": "1.1.0",
@@ -40,5 +41,11 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
+  },
+  "lock": {
+    "ai.transforms.gilgamesh.unity": {
+      "hash": "ad9e6b98b4435bcec20360e2eb7dbfe45c15323b",
+      "revision": "UnityPackage"
+    }
   }
 }

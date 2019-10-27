@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bca6e7f77813420d95d8beead8458d6b, type: 3}
+  m_Name: TSAcademySettings
+  m_EditorClassIdentifier: 
+  BuildConfig:
+    Roles: []
+    BrainConfigTemplates: []
+    TrainingEnvironments: []
+    DefaultHyperParameters: "default:\r\n    trainer: ppo\r\n    batch_size: 1024\r\n
+      \   beta: 5.0e-3\r\n    buffer_size: 10240\r\n    epsilon: 0.2\r\n    hidden_units:
+      128\r\n    lambd: 0.95\r\n    learning_rate: 3.0e-4\r\n    learning_rate_schedule:
+      linear\r\n    max_steps: 5.0e4\r\n    memory_size: 256\r\n    normalize: false\r\n
+      \   num_epoch: 3\r\n    num_layers: 2\r\n    time_horizon: 64\r\n    sequence_length:
+      64\r\n    summary_freq: 1000\r\n    use_recurrent: false\r\n    vis_encode_type:
+      simple\r\n    reward_signals:\r\n        extrinsic:\r\n            strength:
+      1.0\r\n            gamma: 0.99\r\n"
+  TrainingScenePath: 
+  EnvironmentPrefabs: []
