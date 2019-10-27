@@ -12,6 +12,16 @@ PrefabInstance:
       propertyPath: Player
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7614107745641137247, guid: f0c5e66fef8d36646bc71a1abe15e5b6,
+        type: 3}
+      propertyPath: Up
+      value: 97
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614107745641137247, guid: f0c5e66fef8d36646bc71a1abe15e5b6,
+        type: 3}
+      propertyPath: Down
+      value: 102
+      objectReference: {fileID: 0}
     - target: {fileID: 3170816596716138137, guid: f0c5e66fef8d36646bc71a1abe15e5b6,
         type: 3}
       propertyPath: m_Name

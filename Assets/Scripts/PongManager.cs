@@ -6,15 +6,16 @@ public class PongManager : TSEnvironment
 {
 
     [Header("Pong Manager")]
-    public Wall[] Walls = new Wall[2];
+    public Wall WallNorth;
+    public Wall WallSouth;
 
-    // Start is called before the first frame update
-    void Start()
+
+    
+    void Awake()
     {
-        
+
     }
 
-    // Update is called once per frame
     void Update()
     {
         

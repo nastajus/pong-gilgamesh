@@ -120,6 +120,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &5247731 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1938172607324078483, guid: 2e4b5bf29136b594a87c5385868c4c30,
+    type: 3}
+  m_PrefabInstance: {fileID: 6808581976817462748}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd854933fa38be24793e7d443a2994c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,6 +223,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &758473273 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2353456753682988568, guid: 2e4b5bf29136b594a87c5385868c4c30,
+    type: 3}
+  m_PrefabInstance: {fileID: 6808581976817462748}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd854933fa38be24793e7d443a2994c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,6 +325,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -306167047690601820, guid: 2e4b5bf29136b594a87c5385868c4c30,
+        type: 3}
+      propertyPath: Walls.Array.data[0]
+      value: 
+      objectReference: {fileID: 758473273}
+    - target: {fileID: -306167047690601820, guid: 2e4b5bf29136b594a87c5385868c4c30,
+        type: 3}
+      propertyPath: Walls.Array.data[1]
+      value: 
+      objectReference: {fileID: 5247731}
+    - target: {fileID: -306167047690601820, guid: 2e4b5bf29136b594a87c5385868c4c30,
+        type: 3}
+      propertyPath: WallNorth
+      value: 
+      objectReference: {fileID: 758473273}
+    - target: {fileID: -306167047690601820, guid: 2e4b5bf29136b594a87c5385868c4c30,
+        type: 3}
+      propertyPath: WallSouth
+      value: 
+      objectReference: {fileID: 5247731}
     - target: {fileID: 6557684612768523983, guid: 2e4b5bf29136b594a87c5385868c4c30,
         type: 3}
       propertyPath: m_Name
