@@ -11,8 +11,6 @@ public class Ball : MonoBehaviour
     void Awake()
     {
         _rb = GetComponent<Rigidbody>();
-        //var moveBy = MoveRandomly() * Speed; //* Time.deltaTime;
-        //_rb.AddForce(moveBy);
         _rb.velocity = Random.insideUnitCircle * Speed; //already normalized
     }
 
@@ -24,13 +22,7 @@ public class Ball : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //_rb.velocity = _rb.velocity.normalized * Speed; //normalizes into a unit vector (respects orientation/ resets magnitude
+
     }
 
-    Vector3 MoveRandomly()
-    {
-        float x = Random.Range(-1f, 1f);
-        float y = Random.Range(-1f, 1f);
-        return new Vector3(x, y);
-    }
 }
