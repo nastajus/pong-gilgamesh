@@ -6,6 +6,8 @@ public class Paddle : MonoBehaviour
 {
     private Rigidbody _rb;
 
+    public Players Player;
+
     void Awake()
     {
         _rb = GetComponent<Rigidbody>();
@@ -13,6 +15,11 @@ public class Paddle : MonoBehaviour
 
     void FixedUpdate()
     {
-        //_rb.MovePosition()
+        //if ()
+        //{
+
+        //}
     }
+
+    public enum Players { Unset, Player1, Player2 }
 }

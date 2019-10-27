@@ -386,5 +386,15 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3042312390424785836, guid: 2e4b5bf29136b594a87c5385868c4c30,
+        type: 3}
+      propertyPath: Player
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346588357536507111, guid: 2e4b5bf29136b594a87c5385868c4c30,
+        type: 3}
+      propertyPath: Player
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e4b5bf29136b594a87c5385868c4c30, type: 3}
