@@ -12,21 +12,46 @@ public class Paddle : MonoBehaviour
 
 
     private Rigidbody _rb;
-    private PongManager _manager;
+    private Collider _colPaddle;
 
-    private Collider _col1;
-    private Collider _col2;
+
+    private PongManager _manager;
+    private Collider _colWall1;
+    private Collider _colWall2;
+
 
     void Awake()
     {
         _rb = GetComponent<Rigidbody>();
-        _manager = transform.parent.GetComponent<PongManager>();
-        _col1 = _manager.WallNorth.GetComponent<Collider>();
-        _col2 = _manager.WallSouth.GetComponent<Collider>();
+        _colPaddle = GetComponent<Collider>();
 
+        _manager = transform.parent.GetComponent<PongManager>();
+        _colWall1 = _manager.WallNorth.GetComponent<Collider>();
+        _colWall2 = _manager.WallSouth.GetComponent<Collider>();
     }
 
     void FixedUpdate()
+    {
+        float moveDir = Move();
+        Vector3 moveDestMaybe = transform.position + new Vector3(0, moveDir * Speed);
+
+        var northWallBottom = _colWall1.bounds.center.y - _colWall1.bounds.extents.y;
+        var southWallTop = _colWall2.bounds.center.y + _colWall2.bounds.extents.y;
+
+        var paddleTop = _colPaddle.bounds.center.y - _colPaddle.bounds.extents.y;
+        var paddleBottom = _colPaddle.bounds.center.y + _colPaddle.bounds.extents.y;
+
+        //TODO: fix logic error, gets stuck..
+        //if (moveDir > 0 && paddleTop + moveDestMaybe.y < northWallBottom  ||
+        //    moveDir < 0 && paddleBottom + moveDestMaybe.y < southWallTop) 
+        {
+            _rb.MovePosition(moveDestMaybe);
+        }
+        //Debug.Log($"md: {moveDir}, nwb: {northWallBottom}, pt: {paddleTop}, mdm: {moveDestMaybe.y}");
+
+    }
+
+    private float Move()
     {
         float moveDir;
         if (Input.GetKey(Up) && Input.GetKey(Down))
@@ -44,10 +69,8 @@ public class Paddle : MonoBehaviour
         else
         {
             moveDir = 0;
-
         }
-        _rb.MovePosition(transform.position + new Vector3(0, moveDir * Speed));
-
+        return moveDir;
     }
 
     public enum Players { Unset, Player1, Player2 }
