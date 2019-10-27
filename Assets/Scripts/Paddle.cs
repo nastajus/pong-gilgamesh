@@ -72,6 +72,6 @@ public class Paddle : MonoBehaviour
         }
         return moveDir;
     }
-
-    public enum Players { Unset, Player1, Player2 }
 }
+public enum Players { Unset, Player1, Player2 }
+
