@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    public float Speed = 5;
+    public float Speed;
 
     private Rigidbody _rb;
 
@@ -14,7 +14,7 @@ public class Ball : MonoBehaviour
     void Awake()
     {
         _rb = GetComponent<Rigidbody>();
-        _rb.velocity = Random.insideUnitCircle * Speed; //already normalized
+        _rb.velocity = Random.insideUnitCircle * Speed;
 
         //experimental speed improvements, semi-chaotic... 
         //if (_rb.velocity.x < 0.25f)
@@ -29,14 +29,9 @@ public class Ball : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void FixedUpdate()
     {
+        //clearly non-performant when training, so disable 
         VelocityStat();
     }
 

@@ -129,7 +129,7 @@ public class PongManager : TSEnvironment
         PaddleEast.transform.position = new Vector3( 7, 0);
 
 
-        //use soft-coded approach below instead,... but cyclic dependency needs resolving, as Paddle <--> PongManager's Awake... sigh.
+        //use this soft-coded approach instead of above,... but cyclic dependency needs resolving, as Paddle <--> PongManager's Awake... sigh.
         
         //_paddleWestCopy = Instantiate<Paddle>(PaddleWest);
         //_paddleWestCopy.gameObject.SetActive(true);
