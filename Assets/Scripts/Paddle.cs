@@ -35,11 +35,6 @@ public class Paddle : MonoBehaviour
         northWallBottom = _colWall1.bounds.center.y - _colWall1.bounds.extents.y;
         southWallTop = _colWall2.bounds.center.y + _colWall2.bounds.extents.y;
 
-        var cube4 = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        var rb4 = cube4.AddComponent<Rigidbody>();
-        rb4.MovePosition(transform.position + new Vector3(0, northWallBottom, -1));
-        cube4.transform.localScale = new Vector3(1, 0.1f, 1);
-
     }
 
     void FixedUpdate()
