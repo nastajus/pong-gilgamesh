@@ -30,22 +30,17 @@ public class Ball : MonoBehaviour
 
     void VelocityStat()
     {
-        _velocityHistory.Add(_rb.velocity);
+        var magnitudeOnly = new Vector3(Mathf.Abs(_rb.velocity.x), Mathf.Abs(_rb.velocity.y), Mathf.Abs(_rb.velocity.z));
+        _velocityHistory.Add(magnitudeOnly);
     }
 
     private void OnDestroy()
     {
-        var velocityAverage = new Vector3(
-            _velocityHistory.Average(x => x.x), _velocityHistory.Average(y => y.y), _velocityHistory.Average(z => z.z)
-        );
+        var velocityAverage = new Vector2( _velocityHistory.Average(x => x.x), _velocityHistory.Average(y => y.y) );
 
-        var velocityMax = new Vector3(
-                    _velocityHistory.Max(x => x.x), _velocityHistory.Max(y => y.y), _velocityHistory.Max(z => z.z)
-        );
+        var velocityMax = new Vector2( _velocityHistory.Max(x => x.x), _velocityHistory.Max(y => y.y) );
 
-        var velocityMin = new Vector3(
-                    _velocityHistory.Min(x => x.x), _velocityHistory.Min(y => y.y), _velocityHistory.Min(z => z.z)
-        );
+        var velocityMin = new Vector2( _velocityHistory.Min(x => x.x), _velocityHistory.Min(y => y.y) );
 
         Debug.Log($"{nameof(velocityAverage)}: {velocityAverage}, " +
             $"{nameof(velocityMax)}: {velocityMax}, " +
