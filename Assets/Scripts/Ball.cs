@@ -15,6 +15,18 @@ public class Ball : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody>();
         _rb.velocity = Random.insideUnitCircle * Speed; //already normalized
+
+        //experimental speed improvements, semi-chaotic... 
+        //if (_rb.velocity.x < 0.25f)
+        //{
+        //    _rb.velocity = new Vector3(_rb.velocity.x * 4, _rb.velocity.y);
+        //}
+
+        //when it's too sluggish to kick it to go faster
+        if (_rb.velocity.x < 0.5f)
+        {
+            _rb.velocity = new Vector3(_rb.velocity.x * 2, _rb.velocity.y);
+        }
     }
 
     // Update is called once per frame
