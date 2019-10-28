@@ -20,6 +20,8 @@ public class PongManager : TSEnvironment
 
     private Ball _ball;
     private Ball _ballCopy;
+    private GameObject _ballGo;
+    private GameObject _ballGoCopy;
     private Collider _colBall;
     private Collider _colWall1;
     private Collider _colWall2;
@@ -33,8 +35,7 @@ public class PongManager : TSEnvironment
 
     void Awake()
     {
-        _ball = GetComponentInChildren<Ball>();
-        _ballCopy = _ball; //clone? eh..
+
         _colBall = GetComponentInChildren<Ball>().GetComponent<Collider>();
         _colWall1 = WallNorth.GetComponent<Collider>();
         _colWall2 = WallSouth.GetComponent<Collider>();
@@ -43,12 +44,15 @@ public class PongManager : TSEnvironment
         _paddle1 = PaddleWest.GetComponent<Collider>();
         _paddle2 = PaddleEast.GetComponent<Collider>();
 
-        //var scoreRegion = new Vector3(_tableBounds.size.y, _tableBounds.size.y);
         var scoreWestCenteredBesidePaddleWest = _tableBounds.center - new Vector3(_tableBounds.extents.x, 0) + _paddle1.bounds.center - new Vector3(_paddle1.bounds.extents.x, 0);
         var scoreEastCenteredBesidePaddleEast = _tableBounds.center + new Vector3(_tableBounds.extents.x, 0) + _paddle2.bounds.center + new Vector3(_paddle2.bounds.extents.x, 0);
 
         _scoreBoundsWest = new Bounds(scoreWestCenteredBesidePaddleWest, _tableBounds.size);
         _scoreBoundsEast = new Bounds(scoreEastCenteredBesidePaddleEast, _tableBounds.size);
+
+        _ball = GetComponentInChildren<Ball>();
+        _ball.gameObject.SetActive(false);
+        SpawnBall();
 
     }
 
@@ -58,7 +62,7 @@ public class PongManager : TSEnvironment
         {
             Score2++;
             Debug.Log("player 2 scores. now respawning...");
-            Destroy(_colBall.gameObject);
+            Destroy(_ballCopy.gameObject);
             SpawnBall();
         }
 
@@ -66,7 +70,7 @@ public class PongManager : TSEnvironment
         {
             Score1++;
             Debug.Log("player 1 scores. now respawning...");
-            Destroy(_colBall.gameObject);
+            Destroy(_ballCopy.gameObject);
             SpawnBall();
         }
 
@@ -74,7 +78,7 @@ public class PongManager : TSEnvironment
         if (!_colBall.bounds.Intersects(_tableBounds))
         {
             Debug.Log("ball went out of bounds, destroyed it. now respawning...");
-            Destroy(_colBall.gameObject);
+            Destroy(_ballCopy.gameObject);
             SpawnBall();
         }
 
@@ -103,8 +107,10 @@ public class PongManager : TSEnvironment
 
     void SpawnBall()
     {
-        GameObject newBall = Instantiate<GameObject>(_ballCopy.gameObject, Vector3.zero, Quaternion.identity);
-        newBall.transform.parent = transform.parent;
-        _colBall = newBall.GetComponent<Collider>();
+        _ballCopy = Instantiate<Ball>(_ball, Vector3.zero, Quaternion.identity);
+        _ballCopy.gameObject.SetActive(true);
+        _ballCopy.transform.parent = transform;
+        _ballCopy.name = nameof(Ball);
+        _colBall = _ballCopy.GetComponent<Collider>();
     }
 }
